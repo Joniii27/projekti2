@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to EleganTWheels</title>
+    <link rel="stylesheet" href="css/joinUs.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+   </head>
+<body>
+    
+    <div class="wrapper">
+      <form onsubmit="
+       return validate();
+       reset()
+      " action="style.html">
+      <h1>Sign up</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Full name" id="name">
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="text"
+        placeholder="username" id="username">
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="email" placeholder="Email" id="email">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" id="password">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm password" id="confirmPass">
+      </div>
+
+      <div class="remember-forgot">
+        <label><input type="checkbox"> Remember me</label>
+      </div>
+
+      <button type="submit" class="btn">Sign up!</button>
+      
+    
+    </form>
+    </div>
+    <script>
+      function validate(){
+        var name = document.getElementById("name");
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var email = document.getElementById("email");
+        var confirmPass = document.getElementById("confirmPass");
+
+        if(username.value == "" || password.value == "" || email.value == "" 
+        || password.value != confirmPass.value){
+          alert('Please fill out the form');
+          return false;
+        }
+        else{
+        return true;
+        }
+        function reset(){
+           document.getElementById("name").innerHTML = "";
+           document.getElementById("username").innerHTML = "";
+           document.getElementById("email").innerHTML = "";
+           document.getElementById("password").innerHTML = "";
+           document.getElementById("confirmPass").innerHTML = "";
+           
+        }
+      }
+    </script>
+</body>
+</html>
